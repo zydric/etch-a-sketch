@@ -6,3 +6,16 @@
 	box-sizing: border-box;
 	font-family: 'Press Start 2P', system-ui;
 }
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.container {
+	border: 2px solid red;
+	width: 600px;
+	height: 500px;
+}
