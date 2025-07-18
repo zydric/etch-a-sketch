@@ -14,7 +14,32 @@ body {
 	height: 100vh;
 }
 
+button {
+	all: unset;
+	cursor: pointer;
+}
+
 .container {
+	padding: 1rem;
+}
+
+.action-buttons {
+	margin-bottom: 1rem;
+}
+
+.btn-clear {
+	font-size: 0.8em;
+	background-color: lightblue;
+	padding: 6px 10px;
+	border-radius: 0.5em;
+}
+
+.btn-clear:hover {
+	background-color: rgb(193, 230, 242);
+	transition: 0.15s;
+}
+
+.grid-container {
 	display: flex;
 	flex-direction: column;
 	border: 2px solid black;
