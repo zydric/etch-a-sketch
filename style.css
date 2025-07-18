@@ -43,7 +43,7 @@ button {
 .grid-container {
 	display: flex;
 	flex-direction: column;
-	border: 2px solid black;
+	border: 1px solid black;
 	width: 600px;
 	height: 600px;
 }

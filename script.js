@@ -11,7 +11,6 @@ const rows = 16;
 const cols = 16;
 let gridSize = parseInt(gridSizeSlider.value);
 
-console.log(gridSize)
 // ------- Logic Functions -------
 function generateGrid(gridSize) {
     gridContainer.innerHTML = "";
