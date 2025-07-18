@@ -1,6 +1,6 @@
 // ------- DOM References -------
 
-const container = document.querySelector('.container');
+const gridContainer = document.querySelector('.grid-container');
 
 // ------- States -------
 
@@ -20,14 +20,14 @@ function generateGrid(rows, cols) {
             array[i][j] = grid;
             row.appendChild(array[i][j]);
         }
-        container.appendChild(row)
+        gridContainer.appendChild(row)
     }
 }
 
 generateGrid(rows, cols);
 
 // ------- Event Listeners -------
-container.addEventListener('mouseover', (e) => {
+gridContainer.addEventListener('mouseover', (e) => {
 	const target = e.target;
 
 	if (target.classList.contains('grid')) {
