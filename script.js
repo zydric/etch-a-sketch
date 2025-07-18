@@ -1,22 +1,20 @@
 // ------- DOM References -------
-
 const gridContainer = document.querySelector('.grid-container');
 const clearBtn = document.querySelector('#btn-clear');
 const gridSizeSlider = document.querySelector('#grid-size-slider');
 const gridSizeValue = document.querySelector('#grid-size');
 
 // ------- States -------
-
-const rows = 16;
-const cols = 16;
 let gridSize = parseInt(gridSizeSlider.value);
 
 // ------- Logic Functions -------
 function generateGrid(gridSize) {
-    gridContainer.innerHTML = "";
+	gridContainer.innerHTML = '';
+
 	for (let i = 0; i < gridSize; i++) {
 		const row = document.createElement('div');
 		row.className = 'row';
+
 		for (let j = 0; j < gridSize; j++) {
 			const grid = document.createElement('div');
 			grid.className = 'grid';
@@ -25,9 +23,6 @@ function generateGrid(gridSize) {
 		gridContainer.appendChild(row);
 	}
 }
-
-generateGrid(gridSize);
-gridSizeValue.textContent = gridSizeSlider.value
 
 // ------- Event Listeners -------
 gridContainer.addEventListener('mouseover', (e) => {
@@ -48,7 +43,10 @@ clearBtn.addEventListener('click', () => {
 });
 
 gridSizeSlider.addEventListener('input', (e) => {
-    gridSizeValue.textContent = e.target.value;
-    gridSize = parseInt(e.target.value);
-    generateGrid(gridSize);
+	gridSizeValue.textContent = e.target.value;
+	gridSize = parseInt(e.target.value);
+	generateGrid(gridSize);
 });
+
+generateGrid(gridSize);
+gridSizeValue.textContent = gridSizeSlider.value;
