@@ -1,6 +1,7 @@
 // ------- DOM References -------
 
 const gridContainer = document.querySelector('.grid-container');
+const clearBtn = document.querySelector('#btn-clear');
 
 // ------- States -------
 
@@ -9,19 +10,19 @@ const cols = 16;
 
 // ------- Logic Functions -------
 function generateGrid(rows, cols) {
-    const array = [];
-    for(let i = 0; i < rows; i++) {
-        const row = document.createElement('div');
-        row.className = 'row';
-        array[i] = row;
-        for(let j = 0; j < cols; j++) {
-            const grid = document.createElement('div');
-            grid.className = 'grid';
-            array[i][j] = grid;
-            row.appendChild(array[i][j]);
-        }
-        gridContainer.appendChild(row)
-    }
+	const array = [];
+	for (let i = 0; i < rows; i++) {
+		const row = document.createElement('div');
+		row.className = 'row';
+		array[i] = row;
+		for (let j = 0; j < cols; j++) {
+			const grid = document.createElement('div');
+			grid.className = 'grid';
+			array[i][j] = grid;
+			row.appendChild(array[i][j]);
+		}
+		gridContainer.appendChild(row);
+	}
 }
 
 generateGrid(rows, cols);
@@ -34,4 +35,12 @@ gridContainer.addEventListener('mouseover', (e) => {
 		target.classList.add('fill');
 	}
 });
-// ------- UI Updates -------
+
+clearBtn.addEventListener('click', () => {
+	const grids = gridContainer.querySelectorAll('.grid');
+	grids.forEach((grid) => {
+		if (grid.classList.contains('fill')) {
+			grid.classList.remove('fill');
+		}
+	});
+});
