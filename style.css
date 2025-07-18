@@ -16,17 +16,21 @@ body {
 
 .container {
 	display: flex;
-	flex-wrap: wrap;
-	border: 2px solid red;
+	flex-direction: column;
+	border: 2px solid black;
 	width: 600px;
 	height: 500px;
 }
+.row {
+	flex-grow: 1;
+	display: flex;
+	width: 100%;
+	height: auto;
+}
 
 .grid {
-	outline: 1px solid black;
-	height: 2em;
 	flex-grow: 1;
-	flex-basis: 5em;
+	outline: 1px solid black;
 }
 
 .fill {
