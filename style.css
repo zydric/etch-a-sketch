@@ -89,3 +89,7 @@ button {
 	margin-top: 1em;
 	font-size: 0.8em;
 }
+
+#grid-size-slider {
+	width: 63%;
+}

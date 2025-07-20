@@ -4,7 +4,7 @@ const clearBtn = document.querySelector('#btn-clear');
 const rainbowBtn = document.querySelector('#btn-rainbow');
 const colorBtn = document.querySelector('#btn-color');
 const gridSizeSlider = document.querySelector('#grid-size-slider');
-const gridSizeValue = document.querySelector('#grid-size');
+const gridSizeValue = document.querySelectorAll('.grid-size');
 const colorPicker = document.querySelector('#color-picker');
 
 // ------- States -------
@@ -107,11 +107,13 @@ rainbowBtn.addEventListener('click', () => {
 });
 
 gridSizeSlider.addEventListener('input', (e) => {
-	gridSizeValue.textContent = e.target.value;
+	gridSizeValue.forEach(
+		(value) => (value.textContent = gridSizeSlider.value)
+	);
 	gridSize = parseInt(e.target.value);
 	generateGrid(gridSize);
 });
 
 generateGrid(gridSize);
-selectButton(colorBtn)
-gridSizeValue.textContent = gridSizeSlider.value;
+selectButton(colorBtn);
+gridSizeValue.forEach((value) => (value.textContent = gridSizeSlider.value));
