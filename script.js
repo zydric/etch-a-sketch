@@ -36,22 +36,27 @@ function getRandomColor() {
 	return Math.floor(Math.random() * 255);
 }
 
+function colorFill(target, color = null, rgb = null) {
+	if (target.classList.contains('grid')) {
+		if (rgb !== null) {
+			target.style.backgroundColor = `rgb(${rgb.join(', ')})`;
+		} else {
+			target.style.backgroundColor = `${color}`;
+		}
+	}
+}
+
 // ------- Event Listeners -------
 gridContainer.addEventListener('mouseover', (e) => {
 	const target = e.target;
 
-	if (target.classList.contains('grid')) {
-		target.classList.add('fill');
-	}
+	colorFill(target, colorPicker.value);
 });
 
 clearBtn.addEventListener('click', () => {
 	const grids = gridContainer.querySelectorAll('.grid');
 	grids.forEach((grid) => {
-		if (grid.classList.contains('fill')) {
-			grid.classList.remove('fill');
-			grid.style.backgroundColor = '';
-		}
+		grid.style.backgroundColor = '';
 	});
 });
 
@@ -60,9 +65,7 @@ colorBtn.addEventListener('click', () => {
 		const target = e.target;
 		const color = colorPicker.value;
 
-		if (target.classList.contains('grid')) {
-			target.style.backgroundColor = `${color}`;
-		}
+		colorFill(target, color);
 	});
 });
 
@@ -71,9 +74,7 @@ rainbowBtn.addEventListener('click', () => {
 		const target = e.target;
 		const rgb = randomizeRGB();
 
-		if (target.classList.contains('grid')) {
-			target.style.backgroundColor = `rgb(${rgb.join(', ')})`;
-		}
+		colorFill(target, null, rgb);
 	});
 });
 
