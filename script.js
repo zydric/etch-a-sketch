@@ -48,6 +48,7 @@ clearBtn.addEventListener('click', () => {
 	grids.forEach((grid) => {
 		if (grid.classList.contains('fill')) {
 			grid.classList.remove('fill');
+			grid.style.backgroundColor = '';
 		}
 	});
 });
@@ -58,6 +59,7 @@ rainbowBtn.addEventListener('click', () => {
 		const rgb = randomizeRGB();
 
 		if (target.classList.contains('grid')) {
+			target.classList.add('rainbow')
 			target.style.backgroundColor = `rgb(${rgb.join(', ')})`;
 		}
 	});
