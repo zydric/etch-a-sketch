@@ -27,7 +27,7 @@ button {
 	margin-bottom: 1rem;
 }
 
-.btn-clear {
+.btn {
 	font-size: 0.8em;
 	background-color: lightblue;
 	padding: 6px 10px;
@@ -35,7 +35,7 @@ button {
 	transition: transform 0.1s ease-in-out;
 }
 
-.btn-clear:hover {
+.btn:hover {
 	background-color: rgb(193, 230, 242);
 	transform: scale(1.03);
 }
