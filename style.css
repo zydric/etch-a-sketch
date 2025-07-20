@@ -8,6 +8,7 @@
 }
 
 body {
+	background-color: #F0F8FF;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -36,17 +37,44 @@ button {
 }
 
 .btn:hover {
-	background-color: rgb(193, 230, 242);
+	background-color: rgb(137, 210, 235);
 	transform: scale(1.03);
+}
+
+.btn-color:focus,
+.btn-rainbow:focus {
+	background-color: rgb(35, 253, 71);
+	outline: 2px solid rgb(2, 93, 10);
+}
+
+.btn-clear:active {
+	background-color: rgb(113, 196, 224);
 }
 
 .grid-container {
 	display: flex;
 	flex-direction: column;
-	border: 1px solid black;
+	border: 1px solid rgb(226, 226, 226);
 	width: 600px;
 	height: 600px;
+	border-radius: 0.2em;
+	overflow: hidden;
+	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
+
+#color-picker {
+	width: 28px;
+	height: 28px;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+}
+
+#color-picker::-webkit-color-swatch {
+	border-radius: 50%;
+}
+
 .row {
 	flex-grow: 1;
 	display: flex;
