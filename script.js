@@ -80,8 +80,6 @@ gridContainer.addEventListener('mouseover', (e) => {
 });
 
 clearBtn.addEventListener('click', () => {
-	colorBtn.classList.remove('selected');
-	rainbowBtn.classList.remove('selected');
 	const grids = gridContainer.querySelectorAll('.grid');
 	grids.forEach((grid) => {
 		grid.style.backgroundColor = '';
@@ -115,4 +113,5 @@ gridSizeSlider.addEventListener('input', (e) => {
 });
 
 generateGrid(gridSize);
+selectButton(colorBtn)
 gridSizeValue.textContent = gridSizeSlider.value;
