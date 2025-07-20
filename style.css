@@ -56,10 +56,6 @@ button {
 	flex-grow: 1;
 }
 
-.fill {
-	background-color: #343434;
-}
-
 .slider {
 	margin-top: 1em;
 	font-size: 0.8em;
