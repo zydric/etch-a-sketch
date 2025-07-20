@@ -9,11 +9,15 @@
 	<body>
 		<div class="container">
 			<div class="action-buttons">
-				<button class="btn btn-clear" id="btn-clear">Clear Canvas</button>
+				<input type="color" id="color-picker" value="#343434">
+				<button class="btn btn-color" id="btn-color">Color</button>
 				<button class="btn btn-rainbow" id="btn-rainbow">Rainbow</button>
-				<label for="grid-size-slider">Grid size: </label>
-				<input type="range" id="grid-size-slider" name="grid-size-slider" min="1" max="64" value="16">
-				<span id="grid-size"></span>
+				<button class="btn btn-clear" id="btn-clear">Clear Canvas</button>
+				<div class="slider">
+					<label for="grid-size-slider">Grid size: </label>
+					<input type="range" id="grid-size-slider" name="grid-size-slider" min="1" max="64" value="16">
+					<span id="grid-size"></span>
+				</div>
 			</div>
 			<div class="grid-container"></div>
 		</div>

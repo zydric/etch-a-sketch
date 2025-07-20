@@ -2,8 +2,10 @@
 const gridContainer = document.querySelector('.grid-container');
 const clearBtn = document.querySelector('#btn-clear');
 const rainbowBtn = document.querySelector('#btn-rainbow');
+const colorBtn = document.querySelector('#btn-color');
 const gridSizeSlider = document.querySelector('#grid-size-slider');
 const gridSizeValue = document.querySelector('#grid-size');
+const colorPicker = document.querySelector('#color-picker');
 
 // ------- States -------
 let gridSize = parseInt(gridSizeSlider.value);
@@ -53,13 +55,23 @@ clearBtn.addEventListener('click', () => {
 	});
 });
 
+colorBtn.addEventListener('click', () => {
+	gridContainer.addEventListener('mouseover', (e) => {
+		const target = e.target;
+		const color = colorPicker.value;
+
+		if (target.classList.contains('grid')) {
+			target.style.backgroundColor = `${color}`;
+		}
+	});
+});
+
 rainbowBtn.addEventListener('click', () => {
 	gridContainer.addEventListener('mouseover', (e) => {
 		const target = e.target;
 		const rgb = randomizeRGB();
 
 		if (target.classList.contains('grid')) {
-			target.classList.add('rainbow')
 			target.style.backgroundColor = `rgb(${rgb.join(', ')})`;
 		}
 	});
