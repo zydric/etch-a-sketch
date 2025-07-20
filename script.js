@@ -46,6 +46,32 @@ function colorFill(target, color = null, rgb = null) {
 	}
 }
 
+function selectButton(button) {
+	button.classList.add('selected');
+}
+function unselectButton(button) {
+	button.classList.remove('selected');
+}
+
+function checkIfSelected(button1, button2) {
+	if (
+		!button1.classList.contains('selected') &&
+		button2.classList.contains('selected')
+	) {
+		selectButton(button1);
+		unselectButton(button2);
+	} else if (
+		!(
+			button1.classList.contains('selected') &&
+			button2.classList.contains('selected')
+		)
+	) {
+		selectButton(button1);
+	} else {
+		unselectButton(button1);
+	}
+}
+
 // ------- Event Listeners -------
 gridContainer.addEventListener('mouseover', (e) => {
 	const target = e.target;
@@ -54,6 +80,8 @@ gridContainer.addEventListener('mouseover', (e) => {
 });
 
 clearBtn.addEventListener('click', () => {
+	colorBtn.classList.remove('selected');
+	rainbowBtn.classList.remove('selected');
 	const grids = gridContainer.querySelectorAll('.grid');
 	grids.forEach((grid) => {
 		grid.style.backgroundColor = '';
@@ -61,6 +89,7 @@ clearBtn.addEventListener('click', () => {
 });
 
 colorBtn.addEventListener('click', () => {
+	checkIfSelected(colorBtn, rainbowBtn);
 	gridContainer.addEventListener('mouseover', (e) => {
 		const target = e.target;
 		const color = colorPicker.value;
@@ -70,6 +99,7 @@ colorBtn.addEventListener('click', () => {
 });
 
 rainbowBtn.addEventListener('click', () => {
+	checkIfSelected(rainbowBtn, colorBtn);
 	gridContainer.addEventListener('mouseover', (e) => {
 		const target = e.target;
 		const rgb = randomizeRGB();

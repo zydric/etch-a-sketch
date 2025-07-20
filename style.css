@@ -8,7 +8,7 @@
 }
 
 body {
-	background-color: #F0F8FF;
+	background-color: #f0f8ff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -41,8 +41,8 @@ button {
 	transform: scale(1.03);
 }
 
-.btn-color:focus,
-.btn-rainbow:focus {
+.selected,
+.selected:hover {
 	background-color: rgb(35, 253, 71);
 	outline: 2px solid rgb(2, 93, 10);
 }
@@ -60,7 +60,8 @@ button {
 	border-radius: 0.2em;
 	overflow: hidden;
 	background-color: white;
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+		rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
 #color-picker {
